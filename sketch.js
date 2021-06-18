@@ -19,7 +19,7 @@ function setup() {
 	
 	groundObject=new ground(width/2,670,width,20);
 	dustbinObj=new dustbin(1200,650);
-	ball = new Ball(200,600)
+	ball = new Ball(200,600,40)
 
 	Engine.run(engine);
   
@@ -37,3 +37,8 @@ function draw() {
 
 }
 
+function keyPressed(){
+	if(keyCode == UP_ARROW){
+		Body.applyForce(ball.body,ball.body.position,{x:120,y:-165})
+	}
+}
